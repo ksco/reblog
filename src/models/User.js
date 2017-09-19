@@ -2,6 +2,7 @@ import { Model, attr } from 'redux-orm';
 import { 
   LIST_SUCCESS,
   COMMENTS_SUCCESS,
+  POST_SUCCESS,
 } from '../constants/action';
 
 export default class User extends Model {
@@ -25,6 +26,14 @@ export default class User extends Model {
             login: user.login,
             avatarUrl: user.avatar_url,
           });
+        });
+        break;
+      case POST_SUCCESS:
+        const { user } = payload;
+        User.upsert({
+          id: user.id,
+          login: user.login,
+          avatarUrl: user.avatar_url,
         });
         break;
       default: break;
