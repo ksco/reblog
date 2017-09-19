@@ -2,6 +2,7 @@ import React from 'react';
 import { Divider, Comment, Header } from 'semantic-ui-react';
 
 import CommentComponent from './Comment';
+import CommentForm from './CommentForm';
 import Spinner from './Spinner';
 import Empty from './Empty';
 
@@ -20,6 +21,7 @@ export default ({ comments, commentsLoading }) => {
               <CommentComponent key={comment.id} comment={comment} />
             ))
         }
+        <CommentForm />
       </Comment.Group>
     </div>
   );
