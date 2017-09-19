@@ -1,0 +1,28 @@
+{
+  "name": "ksco.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "marked": "^0.3.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-api-middleware": "^2.0.0-beta.3",
+    "redux-little-router": "^14.2.0",
+    "redux-orm": "^0.9.4",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.73.0",
+    "timeago.js": "^3.0.2"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.13"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

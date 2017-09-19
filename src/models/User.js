@@ -1,0 +1,45 @@
+import { Model, attr } from 'redux-orm';
+import { 
+  LIST_SUCCESS,
+  COMMENTS_SUCCESS,
+} from '../constants/action';
+
+export default class User extends Model {
+  static reducer(action, User) {
+    const { type, payload } = action;
+    switch (type) {
+      case LIST_SUCCESS:
+        payload.forEach(({ user }) => {
+          User.upsert({
+            id: user.id,
+            login: user.login,
+            avatarUrl: user.avatar_url,
+          });
+        });
+        break;
+      case COMMENTS_SUCCESS:
+        const { comments } = payload;
+        comments.forEach(({ user }) => {
+          User.upsert({
+            id: user.id,
+            login: user.login,
+            avatarUrl: user.avatar_url,
+          });
+        });
+        break;
+      default: break;
+    }
+  }
+
+  static get fields() {
+    return {
+      id: attr(),
+      login: attr(),
+      avatarUrl: attr(),
+    };
+  }
+
+  static get modelName() {
+    return 'User';
+  }
+}

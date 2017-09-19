@@ -1,0 +1,257 @@
+.marked {
+  display: block;
+  word-wrap: break-word;
+  overflow: hidden;
+  color: #000;
+  line-height: 1.7;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  /* Printing */
+  /* Typography */
+  /* Spacing */
+  /* Links */
+  /* Images */
+  /* Horizontal lines */
+  /* Headings */
+  /* Code blocks */
+  /* Tables */
+  /* Lists */
+  /* Blockquote */
+  /* Description Lists */
+  /* Task Lists */
+}
+.marked * {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: inherit;
+}
+.marked > *:first-child {
+  margin-top: 0 !important;
+}
+.marked > *:last-child {
+  margin-bottom: 0 !important;
+}
+.marked pre,
+.marked code,
+.marked blockquote,
+.marked tr,
+.marked img,
+.marked table,
+.marked figure {
+  page-break-inside: avoid;
+}
+.marked p,
+.marked h2,
+.marked h3,
+.marked h4,
+.marked h5 {
+  orphans: 3;
+  widows: 3;
+}
+.marked h1,
+.marked h2,
+.marked h3,
+.marked h4,
+.marked h5 {
+  page-break-after: avoid;
+}
+.marked strong,
+.marked b {
+  font-weight: bold;
+}
+.marked em {
+  font-style: italic;
+}
+.marked p,
+.marked blockquote,
+.marked ul,
+.marked ol,
+.marked dl,
+.marked table {
+  margin-top: 0;
+  margin-bottom: 0.85em;
+}
+.marked a {
+  color: #4183c4;
+  text-decoration: none;
+  background: transparent;
+}
+.marked a:hover,
+.marked a:focus,
+.marked a:active {
+  outline: 0;
+  text-decoration: underline;
+}
+.marked img {
+  border: 0;
+  max-width: 100%;
+}
+.marked hr {
+  height: 4px;
+  padding: 0;
+  margin: 1.7em 0;
+  overflow: hidden;
+  background-color: #e7e7e7;
+  border: none;
+}
+.marked hr:before,
+.marked hr:after {
+  display: table;
+  content: " ";
+}
+.marked hr:after {
+  clear: both;
+}
+.marked h1,
+.marked h2,
+.marked h3,
+.marked h4,
+.marked h5,
+.marked h6 {
+  margin-top: 1.275em;
+  margin-bottom: 0.85em;
+  font-weight: bold;
+}
+.marked h1 {
+  font-size: 2em;
+}
+.marked h2 {
+  font-size: 1.75em;
+}
+.marked h3 {
+  font-size: 1.5em;
+}
+.marked h4 {
+  font-size: 1.25em;
+}
+.marked h5 {
+  font-size: 1em;
+}
+.marked h6 {
+  font-size: 1em;
+  color: #777;
+}
+.marked code,
+.marked pre {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  direction: ltr;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  color: inherit;
+}
+.marked pre {
+  overflow: auto;
+  word-wrap: normal;
+  margin: 0px;
+  padding: 0.85em 1em;
+  margin-bottom: 1.275em;
+  background: #f7f7f7;
+}
+.marked pre > code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  font-size: 0.85em;
+  white-space: pre;
+  background: transparent;
+}
+.marked pre > code:before,
+.marked pre > code:after {
+  content: normal;
+}
+.marked code {
+  padding: 0.2em;
+  margin: 0;
+  font-size: 0.85em;
+  background-color: #f7f7f7;
+}
+.marked code:before,
+.marked code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+.marked table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow: auto;
+}
+.marked table td,
+.marked table th {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+.marked table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.marked table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+.marked table th {
+  font-weight: bold;
+}
+.marked ul,
+.marked ol {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.85em;
+  padding-left: 2em;
+}
+.marked ul ol,
+.marked ol ol,
+.marked ul ul,
+.marked ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.marked ol ol {
+  list-style-type: lower-roman;
+}
+.marked blockquote {
+  margin: 0;
+  margin-bottom: 0.85em;
+  padding: 0 15px;
+  color: #858585;
+  border-left: 4px solid #e5e5e5;
+}
+.marked blockquote:first-child {
+  margin-top: 0;
+}
+.marked blockquote:last-child {
+  margin-bottom: 0;
+}
+.marked dl {
+  padding: 0;
+}
+.marked dl dt {
+  padding: 0;
+  margin-top: 0.85em;
+  font-style: italic;
+  font-weight: bold;
+}
+.marked dl dd {
+  padding: 0 0.85em;
+  margin-bottom: 0.85em;
+}
+.marked dd {
+  margin-left: 0;
+}
+.marked .task-list,
+.marked .contains-task-list {
+  padding: 0;
+  padding-left: 0.8em;
+  list-style: none;
+}
+.marked .task-list .task-list-item-checkbox,
+.marked .contains-task-list .task-list-item-checkbox {
+  margin: 0 0.2em 0.25em 0em;
+  vertical-align: middle;
+}
