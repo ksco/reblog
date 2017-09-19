@@ -3,8 +3,8 @@ import { CALL_API } from 'redux-api-middleware';
 import { params } from '../utils';
 
 import {
+  LIST_LOADING,
   LIST_SUCCESS,
-  REQUEST_STARTED,
   REQUEST_FAILURE,
 } from '../constants/action';
 
@@ -16,7 +16,7 @@ export default (creator, state) => {
       endpoint: ISSUES_BASE_URL + params({creator, state}),
       method: 'GET',
       types: [
-        REQUEST_STARTED,
+        LIST_LOADING,
         LIST_SUCCESS,
         REQUEST_FAILURE,
       ],

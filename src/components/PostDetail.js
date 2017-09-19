@@ -30,7 +30,7 @@ class PostDetail extends Component {
   }
 
   render() {
-    const { post } = this.props;
+    const { post, commentsLoading } = this.props;
 
     if (post) {
       return (
@@ -47,7 +47,7 @@ class PostDetail extends Component {
             <div className='marked' dangerouslySetInnerHTML={{__html: marked(post.body)}}></div>
           </Segment>
           
-          <Comments comments={post.comments}/>
+          <Comments comments={post.comments} loading={commentsLoading}/>
         </div>
       );
     }
@@ -58,6 +58,7 @@ class PostDetail extends Component {
 const mapStateToProps = (state) => {
   return {
     post: post(state),
+    commentsLoading: state.state.loading.comments,
     selectedPostId: parseInt(state.router.params.postId, 10),
   }
 }

@@ -5,6 +5,7 @@ import { push } from 'redux-little-router';
 
 import PostItem from './PostItem';
 import Spinner from './Spinner';
+import Empty from './Empty';
 
 import getPostList from '../actions/posts';
 import { posts } from '../selectors';
@@ -16,7 +17,9 @@ class PostList extends Component {
   }
 
   renderPostList() {
-    const { posts, postClicked } = this.props;
+    const { posts, loading, postClicked } = this.props;
+    if (loading === true) { return <Spinner />; }
+    if (posts.length === 0) { return <Empty />; }
     if (posts.length > 0) {
       return (
         <Card.Group>
@@ -34,7 +37,6 @@ class PostList extends Component {
         </Card.Group>
       );
     }
-    return <Spinner />;
   }
 
   render() {
@@ -50,6 +52,7 @@ class PostList extends Component {
 const mapStateToProps = (state) => {
   return {
     posts: posts(state),
+    loading: state.state.loading.list,
   }
 }
 

@@ -1,8 +1,8 @@
 import { CALL_API } from 'redux-api-middleware';
 
 import {
+  COMMENTS_LOADING,
   COMMENTS_SUCCESS,
-  REQUEST_STARTED,
   REQUEST_FAILURE,
 } from '../constants/action';
 
@@ -14,7 +14,7 @@ export default (selectedPostId) => {
       endpoint: `${ISSUES_BASE_URL}/${selectedPostId}/comments`,
       method: 'GET',
       types: [
-        REQUEST_STARTED,
+        COMMENTS_LOADING,
         {
           type: COMMENTS_SUCCESS,
           payload: (action, state, res) => {
