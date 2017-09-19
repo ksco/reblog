@@ -13,7 +13,7 @@ import { posts } from '../selectors';
 class PostList extends Component {
   componentDidMount() {
     const { fetchList } = this.props;
-    fetchList('ksco', 'all');
+    fetchList('ksco', 'open');
   }
 
   renderPostList() {
