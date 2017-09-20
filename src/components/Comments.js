@@ -6,8 +6,8 @@ import CommentForm from './CommentForm';
 import Spinner from './Spinner';
 import Empty from './Empty';
 
-export default ({ comments, commentsLoading }) => {
-  if (commentsLoading) { return <Spinner />; }
+export default ({ comments, loading }) => {
+  if (loading) { return <Spinner />; }
   return (
     <div>
       <Divider inverted section />
