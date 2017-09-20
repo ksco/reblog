@@ -8,13 +8,11 @@ export const ormSelector = state => state.orm;
 export const posts = createSelector(
   ormSelector,
   ormCreateSelector(orm, session => {
-    return session.Post.all().toModelArray().map(post => {
-      return {
+    return session.Post.all().toModelArray().map(post => ({
         ...post.ref,
         ...post.labels.toRefArray(),
         user: post.user.ref,
-      };
-    })
+    })).sort((a, b) => a.id > b.id ? -1 : 1);
   })
 );
 
