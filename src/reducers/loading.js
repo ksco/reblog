@@ -5,12 +5,15 @@ import {
   POST_SUCCESS,
   COMMENTS_LOADING,
   COMMENTS_SUCCESS,
+  ACCESS_LOADING,
+  ACCESS_SUCCESS,
 } from '../constants/action';
 
 export default (state = {
   list: false,
   post: false,
   comments: false,
+  accessToken: false,
 }, action) => {
   switch (action.type) {
     case LIST_LOADING:
@@ -42,6 +45,16 @@ export default (state = {
       return {
         ...state,
         comments: false,
+      }
+    case ACCESS_LOADING:
+      return {
+        ...state,
+        accessToken: true,
+      }
+    case ACCESS_SUCCESS:
+      return {
+        ...state,
+        accessToken: false,
       }
     default: return state;
   }
