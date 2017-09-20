@@ -10,7 +10,7 @@ import Empty from './Empty';
 import getPostList from '../actions/posts';
 import { posts } from '../selectors';
 
-import { USERNAME } from '../constants/action';
+import { USERNAME } from '../constants/config';
 
 class PostList extends Component {
   componentDidMount() {
