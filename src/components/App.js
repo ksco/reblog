@@ -20,8 +20,8 @@ class App extends Component {
     const queryObj = queries(window.location.search);
     if (queryObj.code !== undefined) {
       setAuthCode(queryObj.code, queryObj.state);
+      window.history.pushState({}, document.title, '/');
     }
-    window.history.pushState({}, document.title, '/');
   }
 
   renderLoginConfirmModal() {

@@ -5,6 +5,7 @@ import marked from 'marked';
 
 export default ({ comment }) => (
   <div>
+    <br />
     <Comment>
       <Comment.Avatar src={comment.user.avatarUrl} />
       <Comment.Content>
