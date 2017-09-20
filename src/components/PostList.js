@@ -10,10 +10,12 @@ import Empty from './Empty';
 import getPostList from '../actions/posts';
 import { posts } from '../selectors';
 
+import { USERNAME } from '../constants/action';
+
 class PostList extends Component {
   componentDidMount() {
     const { fetchList } = this.props;
-    fetchList('ksco', 'open');
+    fetchList(USERNAME, 'open');
   }
 
   renderPostList() {

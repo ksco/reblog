@@ -10,7 +10,7 @@ import {
 export default (state = {
   list: false,
   post: false,
-  comment: false,
+  comments: false,
 }, action) => {
   switch (action.type) {
     case LIST_LOADING:
@@ -36,12 +36,12 @@ export default (state = {
     case COMMENTS_LOADING:
       return {
         ...state,
-        comment: true,
+        comments: true,
       }
     case COMMENTS_SUCCESS:
       return {
         ...state,
-        comment: false,
+        comments: false,
       }
     default: return state;
   }
