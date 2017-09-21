@@ -6,7 +6,7 @@ import CommentForm from './CommentForm';
 import Spinner from './Spinner';
 import Empty from './Empty';
 
-export default ({ comments, loading }) => {
+export default ({ comments, loading, loginedIn }) => {
   if (loading) { return <Spinner />; }
   return (
     <div>
@@ -21,7 +21,7 @@ export default ({ comments, loading }) => {
               <CommentComponent key={comment.id} comment={comment} />
             ))
         }
-        <CommentForm />
+        <CommentForm loginedIn={loginedIn} />
       </Comment.Group>
     </div>
   );

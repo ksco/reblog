@@ -14,8 +14,8 @@ import { USERNAME } from '../constants/config';
 
 class PostList extends Component {
   componentDidMount() {
-    const { fetchList } = this.props;
-    fetchList(USERNAME, 'open');
+    const { fetchList, accessToken } = this.props;
+    fetchList(USERNAME, 'open', accessToken);
   }
 
   renderPostList() {
@@ -55,11 +55,12 @@ const mapStateToProps = (state) => {
   return {
     posts: posts(state),
     loading: state.state.loading.list,
+    accessToken: state.state.auth.accessToken,
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchList: (creator, state) => dispatch(getPostList(creator, state)),
+  fetchList: (creator, state, accessToken) => dispatch(getPostList(creator, state, accessToken)),
   postClicked: (id) => dispatch(push(`/posts/${id}`)),
 })
 

@@ -9,7 +9,7 @@ import {
 
 import { params } from '../utils';
 
-export default ({ setAuthRStr }) => {
+export default ({ loginedIn }) => {
   const auth_url = `${AUTHORIZE_URL}${params({
     client_id: CLIENT_ID,
     scope: 'public_repo',
@@ -18,11 +18,18 @@ export default ({ setAuthRStr }) => {
   return (
     <div>
       <Divider inverted section />
-      <Message warning>
-        <Icon name='help' />
-        您需要<a target='_blank' href={auth_url}>绑定 GitHub 账号</a>后才能继续。
-      </Message>
-      <Form reply loading>
+      {
+        loginedIn 
+        ? null 
+        : <Message warning>
+            <Icon name='help' />
+            您需要<a target='_blank' href={auth_url}>绑定 GitHub 账号</a>后才能继续。
+          </Message>
+      }
+      <Form
+        reply
+        loading={!loginedIn}
+      >
         <Form.TextArea placeholder='请在此输入评论...' />
         <Button content='提交评论' labelPosition='left' icon='edit' primary />
       </Form>

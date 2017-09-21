@@ -16,15 +16,15 @@ class PostDetail extends Component {
     this.fetchPost(this.props);
   }
 
-  fetchPost({ post, selectedPostId, fetchPost, fetchComments }) {
+  fetchPost({ post, selectedPostId, accessToken, fetchPost, fetchComments }) {
       if (!post) {
-        fetchPost(selectedPostId);
+        fetchPost(selectedPostId, accessToken);
       }
-      fetchComments(selectedPostId);
+      fetchComments(selectedPostId, accessToken);
   }
 
   render() {
-    const { post, postLoading, commentsLoading } = this.props;
+    const { post, accessToken, postLoading, commentsLoading } = this.props;
 
     if (!post || postLoading === true) { return <Spinner />; }
     return (
@@ -41,7 +41,7 @@ class PostDetail extends Component {
           <div className='marked' dangerouslySetInnerHTML={{__html: marked(post.body)}}></div>
         </Segment>
         
-        <Comments comments={post.comments} loading={commentsLoading}/>
+        <Comments comments={post.comments} loading={commentsLoading} loginedIn={accessToken !== null}/>
       </div>
     );
   }
@@ -53,12 +53,13 @@ const mapStateToProps = (state) => {
     selectedPostId: parseInt(state.router.params.postId, 10),
     postLoading: state.state.loading.post,
     commentsLoading: state.state.loading.comments,
+    accessToken: state.state.auth.accessToken,
   }
 }
 
 const mapStateToDispatch = (dispatch) => ({
-  fetchPost: (selectedPostId) => dispatch(getPostDetail(selectedPostId)),
-  fetchComments: (selectedPostId) => dispatch(getPostComments(selectedPostId)),
+  fetchPost: (selectedPostId, accessToken) => dispatch(getPostDetail(selectedPostId, accessToken)),
+  fetchComments: (selectedPostId, accessToken) => dispatch(getPostComments(selectedPostId, accessToken)),
 })
 
 export default connect(mapStateToProps, mapStateToDispatch)(PostDetail);

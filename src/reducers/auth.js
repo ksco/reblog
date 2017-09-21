@@ -18,7 +18,7 @@ export default (state = {
       return {
         ...state,
         code: null,
-        accessToken: payload.access_token,
+        accessToken: payload.success ? payload.body.access_token : null,
       }
     default: return state;
   }
