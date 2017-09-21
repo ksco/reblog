@@ -7,5 +7,6 @@ export default () => (
     <Segment textAlign='center' style={{marginBottom: '1em'}}>
       Build with ❤ using React/Redux by ksco.
     </Segment>
+    <br />
   </div>
 );
