@@ -50,7 +50,7 @@ class App extends Component {
         <Button
           positive
           disabled={accessTokenLoading}
-          onClick={() => getAccessToken(code, 'reblog')}
+          onClick={() => getAccessToken(code)}
         >
           <Icon
             name={accessTokenLoading ? 'circle notched' : 'checkmark'}
@@ -91,7 +91,7 @@ const mapStateToDispatch = (dispatch) => ({
     type: SET_AUTH_CODE,
     payload: { code, rstr },
   }),
-  getAccessToken: (code, rstr) => dispatch(access(code, rstr)),
+  getAccessToken: (code) => dispatch(access(code)),
 });
 
 export default connect(mapStateToProps, mapStateToDispatch)(App);

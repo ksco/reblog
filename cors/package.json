@@ -1,0 +1,11 @@
+{
+  "name": "github-access-token",
+  "scripts": {
+    "start": "micro"
+  },
+  "dependencies": {
+    "micro": "latest",
+    "micro-cors": "0.0.4",
+    "request": "^2.82.0"
+  }
+}

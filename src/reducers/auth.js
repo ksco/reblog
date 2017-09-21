@@ -15,7 +15,6 @@ export default (state = {
         code: payload.code,
       }
     case ACCESS_SUCCESS:
-      console.log(payload);
       return {
         ...state,
         code: null,
