@@ -28,10 +28,9 @@ export default ({ loginedIn }) => {
       }
       <Form
         reply
-        loading={!loginedIn}
       >
-        <Form.TextArea placeholder='请在此输入评论...' />
-        <Button content='提交评论' labelPosition='left' icon='edit' primary />
+        <Form.TextArea placeholder='请在此输入评论...' disabled={!loginedIn} />
+        <Button content='提交评论' labelPosition='left' icon='edit' primary disabled={!loginedIn} />
       </Form>
     </div>
   );
