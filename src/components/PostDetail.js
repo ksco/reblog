@@ -24,7 +24,7 @@ class PostDetail extends Component {
   }
 
   render() {
-    const { post, accessToken, postLoading, commentsLoading } = this.props;
+    const { post, postLoading, commentsLoading } = this.props;
 
     if (!post || postLoading === true) { return <Spinner />; }
     return (
@@ -41,7 +41,7 @@ class PostDetail extends Component {
           <div className='marked' dangerouslySetInnerHTML={{__html: marked(post.body)}}></div>
         </Segment>
         
-        <Comments comments={post.comments} loading={commentsLoading} loginedIn={accessToken !== null}/>
+        <Comments comments={post.comments} loading={commentsLoading} />
       </div>
     );
   }

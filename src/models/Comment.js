@@ -1,14 +1,31 @@
 import { Model, attr, fk } from 'redux-orm';
 
-import { COMMENTS_SUCCESS } from '../constants/action';
+import {
+  COMMENTS_SUCCESS,
+  POST_COMMENT_SUCCESS,
+} from '../constants/action';
 
 export default class Comment extends Model {
   static reducer(action, Comment) {
     const { type, payload } = action;
     switch (type) {
-      case COMMENTS_SUCCESS:
-        const { comments, postId } = payload;
-        comments.forEach(comment => {
+      case COMMENTS_SUCCESS: {
+          const { comments, postId } = payload;
+          comments.forEach(comment => {
+            const userId = comment.user.id;
+            Comment.upsert({
+              id: comment.id,
+              body: comment.body,
+              createdAt: comment.created_at,
+              updatedAt: comment.updated_at,
+              user: userId,
+              post: postId,
+            });
+          });
+        }
+        break;
+      case POST_COMMENT_SUCCESS: {
+          const { comment, postId } = payload;
           const userId = comment.user.id;
           Comment.upsert({
             id: comment.id,
@@ -17,8 +34,8 @@ export default class Comment extends Model {
             updatedAt: comment.updated_at,
             user: userId,
             post: postId,
-          })
-        });
+          });
+        }
         break;
       default: break;
     }
