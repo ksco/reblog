@@ -10,6 +10,7 @@ import { post } from '../selectors';
 import Spinner from './Spinner';
 import Empty from './Empty';
 import Comments from './Comments';
+import Labels from './Labels';
 
 class PostDetail extends Component {
 
@@ -47,6 +48,7 @@ class PostDetail extends Component {
           <div className='marked' dangerouslySetInnerHTML={{__html: marked(post.body)}}></div>
         </Segment>
         
+        <Labels labels={post.labels} />
         <Comments comments={post.comments} loading={commentsLoading} />
       </div>
     );

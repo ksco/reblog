@@ -10,8 +10,8 @@ export default ({ comments, loading }) => {
   if (loading) { return <Spinner />; }
   return (
     <div>
-      <Divider inverted section />
       <Comment.Group>
+        <br />
         <Header as='h3' dividing>评论区</Header>
         
         {

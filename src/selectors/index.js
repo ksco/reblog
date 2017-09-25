@@ -23,8 +23,9 @@ export const post = createSelector(
     if (session.Post.hasId(selectedPostId)) {
       const post = session.Post.withId(selectedPostId);
       const obj = Object.assign({}, post.ref);
+      const labelModels = post.labels.toModelArray();
       const commentModels = post.comments.toModelArray();
-      
+
       obj.comments = commentModels.map(commentModel => {
         const user = commentModel.user.ref;
         return {
@@ -33,8 +34,14 @@ export const post = createSelector(
         };
       });
 
+      obj.labels = labelModels.map(labelModel => {
+        return {
+          ...labelModel.ref,
+        };
+      });
+
       return obj;
     }
     return null;
   })
-)
+);
