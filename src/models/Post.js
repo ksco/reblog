@@ -26,7 +26,7 @@ export default class Post extends Model {
     const labelIds = post.labels.map(label => label.id);
     const { id: userId, login: userLogin } = post.user;
 
-    if (userLogin !== USERNAME) { return; }
+    if (userLogin !== USERNAME || post.state !== 'open') { return; }
 
     Post.upsert({
       id: post.number,
