@@ -8,6 +8,7 @@ import getPostComments from '../actions/comments';
 import { post } from '../selectors';
 
 import Spinner from './Spinner';
+import Empty from './Empty';
 import Comments from './Comments';
 
 class PostDetail extends Component {
@@ -26,7 +27,12 @@ class PostDetail extends Component {
   render() {
     const { post, postLoading, commentsLoading } = this.props;
 
-    if (!post || postLoading === true) { return <Spinner />; }
+    if (post === null) {
+      if (postLoading === true) {
+        return <Spinner />;
+      }
+      return <Empty />;
+    }
     return (
       <div>
         <Header 
@@ -47,19 +53,17 @@ class PostDetail extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    post: post(state),
-    selectedPostId: parseInt(state.router.params.postId, 10),
-    postLoading: state.state.loading.post,
-    commentsLoading: state.state.loading.comments,
-    accessToken: state.state.auth.accessToken,
-  }
-}
+const mapStateToProps = (state) => ({
+  post: post(state),
+  selectedPostId: parseInt(state.router.params.postId, 10),
+  postLoading: state.state.loading.post,
+  commentsLoading: state.state.loading.comments,
+  accessToken: state.state.auth.accessToken,
+});
 
 const mapStateToDispatch = (dispatch) => ({
   fetchPost: (selectedPostId, accessToken) => dispatch(getPostDetail(selectedPostId, accessToken)),
   fetchComments: (selectedPostId, accessToken) => dispatch(getPostComments(selectedPostId, accessToken)),
-})
+});
 
 export default connect(mapStateToProps, mapStateToDispatch)(PostDetail);

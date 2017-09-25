@@ -3,6 +3,8 @@ import {
   LIST_SUCCESS, 
   POST_SUCCESS,
  } from '../constants/action';
+ 
+ import { USERNAME } from '../constants/config';
 
 export default class Post extends Model {
   static reducer(action, Post) {
@@ -22,7 +24,9 @@ export default class Post extends Model {
 
   static doUpsert(post, Post) {
     const labelIds = post.labels.map(label => label.id);
-    const userId = post.user.id;
+    const { id: userId, login: userLogin } = post.user;
+
+    if (userLogin !== USERNAME) { return; }
 
     Post.upsert({
       id: post.number,
