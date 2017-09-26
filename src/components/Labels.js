@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Label, Header } from 'semantic-ui-react';
+import { Label, Header } from 'semantic-ui-react';
 
 export default ({ labels }) => {
   return labels.length <= 0 ? null : (
@@ -7,8 +7,21 @@ export default ({ labels }) => {
       <br />
       <Header as='h3' dividing>文章标签</Header>
       {labels.map(label => (
-        <Label key={label.id} style={{backgroundColor: '#'+label.color, color: '#FFF'}}>
-          {label.name}
+        <Label 
+          key={label.id} 
+          center={true}
+          size='large'
+        >
+          <Label 
+            circular
+            style={{
+              backgroundColor: '#'+label.color,
+              color: '#FFF',
+            }}
+            size='mini'
+            empty
+          />
+          {' '+label.name}
         </Label>
       ))}
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Comment, Header } from 'semantic-ui-react';
+import { Comment, Header } from 'semantic-ui-react';
 
 import CommentComponent from './Comment';
 import CommentForm from './CommentForm';
