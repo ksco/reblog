@@ -1,6 +1,7 @@
 import { Model, attr } from 'redux-orm';
 import {
   LIST_SUCCESS,
+  MORE_SUCCESS,
   POST_SUCCESS,
 } from '../constants/action';
 
@@ -9,6 +10,7 @@ export default class Label extends Model {
     const { type, payload } = action;
     switch (type) {
       case LIST_SUCCESS:
+      case MORE_SUCCESS:
         payload.forEach(post => {
           this.upsertLabels(post.labels, Label);
         });

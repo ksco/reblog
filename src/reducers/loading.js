@@ -1,6 +1,8 @@
 import {
   LIST_LOADING,
   LIST_SUCCESS,
+  MORE_LOADING,
+  MORE_SUCCESS,
   POST_LOADING,
   POST_SUCCESS,
   COMMENTS_LOADING,
@@ -13,6 +15,7 @@ import {
 
 export default (state = {
   list: false,
+  more: false,
   post: false,
   comments: false,
   comment: false,
@@ -28,6 +31,16 @@ export default (state = {
       return {
         ...state,
         list: false,
+      }
+    case MORE_LOADING:
+      return {
+        ...state,
+        more: true,
+      }
+    case MORE_SUCCESS:
+      return {
+        ...state,
+        more: false,
       }
     case POST_LOADING:
       return {

@@ -2,6 +2,10 @@
 export const LIST_LOADING = 'LIST_LOADING';
 export const LIST_SUCCESS = 'LIST_SUCCESS';
 
+// POST LIST MORE
+export const MORE_LOADING = 'MORE_LOADING';
+export const MORE_SUCCESS = 'MORE_SUCCESS';
+
 // SINGLE POST
 export const POST_LOADING = 'POST_LOADING';
 export const POST_SUCCESS = 'POST_SUCCESS';

@@ -1,6 +1,7 @@
 import { Model, attr } from 'redux-orm';
 import { 
   LIST_SUCCESS,
+  MORE_SUCCESS,
   COMMENTS_SUCCESS,
   POST_COMMENT_SUCCESS,
   POST_SUCCESS,
@@ -11,6 +12,7 @@ export default class User extends Model {
     const { type, payload } = action;
     switch (type) {
       case LIST_SUCCESS:
+      case MORE_SUCCESS:
         payload.forEach(({ user }) => {
           User.upsert({
             id: user.id,

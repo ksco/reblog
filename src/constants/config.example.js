@@ -6,3 +6,5 @@ export const USERNAME = 'ksco';
 export const CLIENT_ID = 'xxx';
 export const CLIENT_SECRET = 'xxx';
 export const SITE_URL = 'http://www.example.com';
+
+export const POSTS_PER_PAGE = 2;

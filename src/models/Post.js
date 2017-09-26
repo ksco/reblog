@@ -1,6 +1,7 @@
 import { Model, attr, fk, many } from 'redux-orm';
 import { 
-  LIST_SUCCESS, 
+  LIST_SUCCESS,
+  MORE_SUCCESS,
   POST_SUCCESS,
  } from '../constants/action';
  
@@ -11,6 +12,7 @@ export default class Post extends Model {
     const { type, payload } = action;
     switch (type) {
       case LIST_SUCCESS:
+      case MORE_SUCCESS:
         payload.forEach(post => {
           this.doUpsert(post, Post);
         });
