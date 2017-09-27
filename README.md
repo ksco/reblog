@@ -18,37 +18,37 @@
 
 2. 配置项目
 
-  运行命令
+   运行命令
 
-  ```shell
-  git clone https://github.com/ksco/reblog.git
-  cd reblog
-  mv src/constants/config.example.js src/constants/config.js
-  ```
+   ```shell
+   git clone https://github.com/ksco/reblog.git
+   cd reblog
+   mv src/constants/config.example.js src/constants/config.js
+   ```
 
-  编辑 `src/constants/config.js `文件
+   编辑 `src/constants/config.js `文件
 
-  ```javascript
-  // 博客名称，会显示在页面上方
-  export const BLOG_NAME = 'Reblog';
-  // 博客的 Slogan，会显示在名称下方
-  export const BLOG_SLOGAN = 'Balhblah';
+   ```javascript
+   // 博客名称，会显示在页面上方
+   export const BLOG_NAME = 'Reblog';
+   // 博客的 Slogan，会显示在名称下方
+   export const BLOG_SLOGAN = 'Balhblah';
 
-  // GitHub 用户名
-  export const USERNAME = 'octocat';
-  // 要展示的 Repo 名称
-  export const REPONAME = 'blog';
+   // GitHub 用户名
+   export const USERNAME = 'octocat';
+   // 要展示的 Repo 名称
+   export const REPONAME = 'blog';
 
-  // 刚刚拿到的 Client ID 和 Client Secret
-  export const CLIENT_ID = 'xxx';
-  export const CLIENT_SECRET = 'xxx';
+   // 刚刚拿到的 Client ID 和 Client Secret
+   export const CLIENT_ID = 'xxx';
+   export const CLIENT_SECRET = 'xxx';
 
-  // 博客的地址，必须和之前的 Authorization callback URL 字段保持一致
-  export const SITE_URL = 'http://www.example.com';
+   // 博客的地址，必须和之前的 Authorization callback URL 字段保持一致
+   export const SITE_URL = 'http://www.example.com';
 
-  // 每页显示的博客条数
-  export const POSTS_PER_PAGE = 10;
-  ```
+   // 每页显示的博客条数
+   export const POSTS_PER_PAGE = 10;
+   ```
 
 3. 安装编译
 
