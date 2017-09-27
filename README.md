@@ -71,6 +71,9 @@
 
 ## 关于安全
 
-将 Client Secret 放到客户端中似乎是一种较为危险的行为，但因为 Authorization callback URL 的存在，即使拿到了这个 ID，也做不了什么事情。如果你发现确实有安全性问题，请您给我发邮件。
+1. 将 Client Secret 放到客户端中似乎是一种较为危险的行为，但因为 Authorization callback URL 的存在，即使拿到了这个 ID，也做不了什么事情。如果你发现确实有安全性问题，请您给我发邮件。
 
-如果还是不放心，你当然可以把 Client Secret 隐藏到 上面提到的 CORS 代理中，这样就万无一失了。
+   如果还是不放心，你当然可以把 Client Secret 隐藏到 上面提到的 CORS 代理中，这样就万无一失了。
+
+2. 如果你不想别人在你的博客中使用 Redux DevTools，可以去除掉 `src/store.js` 中的 `window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||` 部分。
+
