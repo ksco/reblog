@@ -8,8 +8,7 @@ export default ({ labels }) => {
       <Header as='h3' dividing>文章标签</Header>
       {labels.map(label => (
         <Label 
-          key={label.id} 
-          center={true}
+          key={label.id}
           size='large'
         >
           <Label 
