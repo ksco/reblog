@@ -11,6 +11,7 @@ import {
   POST_COMMENT_SUCCESS,
   ACCESS_LOADING,
   ACCESS_SUCCESS,
+  REQUEST_FAILURE,
 } from '../constants/action';
 
 export default (state = {
@@ -82,6 +83,16 @@ export default (state = {
         ...state,
         accessToken: false,
       };
+    case REQUEST_FAILURE:
+      return {
+        ...state,
+        list: false,
+        more: false,
+        post: false,
+        comments: false,
+        comment: false,
+        accessToken: false,
+      }
     default: return state;
   }
 }

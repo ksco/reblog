@@ -1,6 +1,7 @@
 import {
   SET_AUTH_CODE,
   ACCESS_SUCCESS,
+  REQUEST_FAILURE,
 } from '../constants/action';
 
 export default (state = {
@@ -19,6 +20,11 @@ export default (state = {
         ...state,
         code: null,
         accessToken: payload.success ? payload.body.access_token : null,
+      }
+    case REQUEST_FAILURE:
+      return {
+        ...state,
+        accessToken: null,
       }
     default: return state;
   }
