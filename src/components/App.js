@@ -86,7 +86,7 @@ const mapStateToProps = (state) => ({
   accessTokenLoading: state.state.loading.accessToken,
 });
 
-const mapStateToDispatch = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   setAuthCode: (code, rstr) => dispatch({
     type: SET_AUTH_CODE,
     payload: { code, rstr },
@@ -94,4 +94,4 @@ const mapStateToDispatch = (dispatch) => ({
   getAccessToken: (code) => dispatch(access(code)),
 });
 
-export default connect(mapStateToProps, mapStateToDispatch)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

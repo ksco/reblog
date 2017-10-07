@@ -78,8 +78,8 @@ const mapStateToProps = (state) => ({
   commentLoading: state.state.loading.comment,
 });
 
-const mapStateToDispatch = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   postComment: (selectedPostId, body, accessToken) => dispatch(comment(selectedPostId, body, accessToken)),
 });
 
-export default connect(mapStateToProps, mapStateToDispatch)(CommentForm);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);

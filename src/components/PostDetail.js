@@ -63,9 +63,9 @@ const mapStateToProps = (state) => ({
   accessToken: state.state.auth.accessToken,
 });
 
-const mapStateToDispatch = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchPost: (selectedPostId, accessToken) => dispatch(getPostDetail(selectedPostId, accessToken)),
   fetchComments: (selectedPostId, accessToken) => dispatch(getPostComments(selectedPostId, accessToken)),
 });
 
-export default connect(mapStateToProps, mapStateToDispatch)(PostDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(PostDetail);
