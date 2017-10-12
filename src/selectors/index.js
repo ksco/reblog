@@ -2,6 +2,7 @@ import { createSelector } from 'reselect';
 import { createSelector as ormCreateSelector } from 'redux-orm';
 
 import orm from '../orm';
+import { toInteger } from '../utils';
 
 export const ormSelector = state => state.orm;
 
@@ -18,7 +19,7 @@ export const posts = createSelector(
 
 export const post = createSelector(
   ormSelector,
-  state => state.router.params.postId,
+  state => toInteger(state.router.params.postId),
   ormCreateSelector(orm, (session, selectedPostId) => {    
     if (session.Post.hasId(selectedPostId)) {
       const post = session.Post.withId(selectedPostId);

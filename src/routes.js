@@ -1,4 +1,14 @@
 export default {
-  '/': {},
-  '/posts/:postId': {},
+  '/': {
+    '/posts': {
+      '/:postId': {
+        '/:whatever': {}
+      }
+    },
+    '/tags': {
+      '/:tagName': {
+        '/:whatever': {}
+      }
+    }
+  }
 }

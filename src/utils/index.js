@@ -32,3 +32,7 @@ export const toFormData = (obj) => {
   });
   return formData;
 }
+
+export const toInteger = (str) => {
+  return /^\d+$/.test(str) ? parseInt(str, 10) : 0;
+}

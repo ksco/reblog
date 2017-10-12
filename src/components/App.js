@@ -7,6 +7,7 @@ import Header from './Header';
 import Footer from './Footer';
 import PostList from './PostList';
 import PostDetail from './PostDetail';
+import Empty from './Empty';
 
 import { queries } from '../utils';
 
@@ -70,8 +71,34 @@ class App extends Component {
         <Header />
         <Fragment forRoute='/'>
           <div>
+            <Fragment forRoute='/posts'>
+              <div>
+                <Fragment forRoute='/:postId'>
+                  <div>
+                    <Fragment forRoute='/:whatever'><Empty /></Fragment>
+                    <Fragment forRoute='/'><PostDetail /></Fragment>
+                    <Fragment forNoMatch><Empty /></Fragment>
+                  </div>
+                </Fragment>
+                <Fragment forRoute='/'><PostList /></Fragment>
+                <Fragment forNoMatch><Empty /></Fragment>
+              </div>
+            </Fragment>
+            <Fragment forRoute='/tags'>
+              <div>
+                <Fragment forRoute='/:tagName'>
+                  <div>
+                    <Fragment forRoute='/:whatever'><Empty /></Fragment>
+                    <Fragment forRoute='/'><PostList /></Fragment>
+                    <Fragment forNoMatch><Empty /></Fragment>
+                  </div>
+                </Fragment>
+                <Fragment forRoute='/'><Empty /></Fragment>
+                <Fragment forNoMatch><Empty /></Fragment>
+              </div>
+            </Fragment>
             <Fragment forRoute='/'><PostList /></Fragment>
-            <Fragment forRoute='/posts/:postId'><PostDetail /></Fragment>
+            <Fragment forNoMatch><Empty /></Fragment>
           </div>
         </Fragment>
         <Footer />
