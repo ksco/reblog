@@ -1,5 +1,5 @@
 # Reblog
-使用 React 技术栈，基于 GitHub Issues 的轻量级博客系统，Demo ：[KSCO](https://blog-storage.b0.upaiyun.com)。
+使用 React 技术栈，基于 GitHub Issues 的轻量级博客系统，Demo ：[KSCO](https://ksco-blog.oss-cn-beijing.aliyuncs.com)。
 
 ## 安装
 
